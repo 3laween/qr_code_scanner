@@ -185,9 +185,9 @@ public class QRView:NSObject,FlutterPlatformView {
                                 let result = { () -> [String : Any]? in
                                     guard let stringValue = code.stringValue else {
                                         guard let safeBytes = bytes else {
-                                            return nil
+                                            continue
                                         }
-                                        return ["type": typeString, "rawBytes": safeBytes]
+                                        continue
                                     }
                                     guard let safeBytes = bytes else {
                                         return ["code": stringValue, "type": typeString]
